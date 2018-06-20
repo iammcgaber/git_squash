@@ -15,6 +15,8 @@ Best way I have found to squash all commits in a given branch
 
 7. Pick / squash commits as you like, then save.
 
+  7a. In VIM, to change multiple lines at the same time, enter visual mode with ctrl-v, then select all the 'pick's that you want to change and press 'x' to delete them.  Press ctrl-v again, and select all the lines you want to change, then type 'I' to enter text insertion mode, and type 's'.  Press escape.  's' will now be all the beginning of all those commits, telling git to squash those.
+
 8. The editor will open again with all your commit messages.  Pick the commit message you would like or create a new one.  Delete the others.  Save.
 
 9. Run `git push -f origin <branch_name>` (You have to force push because you are re-writing history)
