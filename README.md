@@ -27,3 +27,23 @@ One reason to squash commits is to clean up your history if you made lots of lit
 Another reason is that if you work on a large team or a shared repo and don't make a practice of rebasing often, then when branches are merged into master the commits from multiple branches can overlap and make it difficult to roll-back changes for a particular merge request.
 
 One commit is not necesary.  There should be one commit for each functional piece of work.
+
+
+A second method involves a reset
+
+# Switch to the master branch and make sure you are up to date.
+git checkout master
+git fetch # this may be necessary (depending on your git config) to receive updates on origin/master
+git pull
+
+# Merge the feature branch into the master branch.
+git merge feature_branch
+
+# Reset the master branch to origin's state.
+git reset origin/master
+
+# Git now considers all changes as unstaged changes.
+# We can add these changes as one commit.
+# Adding . will also add untracked files.
+git add --all
+git commit
